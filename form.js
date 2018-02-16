@@ -5,7 +5,7 @@ const router = express.Router();
 
 const { Client } = require('pg');
 
-const connectionString = 'postgres://:@localhost/verkefni2';
+const connectionString = process.env.DATABASE_URL || 'postgres://:@localhost/verkefni2';
 
 const client = new Client({
   connectionString,
