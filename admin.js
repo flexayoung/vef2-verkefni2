@@ -34,8 +34,8 @@ function ensureLoggedIn(req, res, next) {
 router.get('/', ensureLoggedIn, (req, res) => {
   select()
     .then(data => res.render('table', { rows: data, user: req.user }))
-    .catch(e => console.error(e))
-})
+    .catch(e => console.error(e));
+});
 
 router.get('/download', ensureLoggedIn, (req, res) => {
   const fields = ['id', 'name', 'email', 'idnumber', 'amount', 'date'];
@@ -44,7 +44,7 @@ router.get('/download', ensureLoggedIn, (req, res) => {
   select()
     .then(data => json2csv({ data, fields }))
     .then(data => res.send(data))
-    .catch(err => console.error(err))
+    .catch(err => console.error(err));
 });
 
 module.exports = router;
