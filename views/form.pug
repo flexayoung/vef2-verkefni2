@@ -1,4 +1,33 @@
 extends layout
 
 block content
-  p Form!
+  if errorMessages
+    ul 
+      each val in errorMessages
+        li=  val
+  div.form-wrapper      
+    form(method='POST' action='/')
+      div.form-group
+        label.form-label(for='name') Nafn:
+        input.form-control(type='text' name='name' value=name required)
+      div.form-group
+        label.form-label(for='email') Netfang:
+        input.form-control(type='email' name='email' value=email required)
+      div.form-group
+        label.form-label(for='idNumber') Kennitala:
+        input.form-control(type='text' name='idNumber' pattern='^[0-9]{6}-?[0-9]{4}$' value=idNumber required)
+      div.form-group
+        label.form-label(for='amount') Fjöldi:
+        input.form-control(type='number' name='amount' value=amount required)
+
+      button.button(type='submit') Senda
+    
+block foot 
+  if user
+    p.link Innskráður notendi: #{user.name}
+    a.link(href='/logout') Útskráning
+    a.link(href='/admin') Stjórnsíða
+
+  else
+    a.link(href='/login') Innskráning
+        

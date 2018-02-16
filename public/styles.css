@@ -19,3 +19,96 @@ body {
   background-color: #eee;
   color: #333;
 }
+
+.form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-80%, -80%);
+}
+
+.form-group {
+  margin: 10px;
+  padding: 10px;
+}
+
+.form-control {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px 0;
+  display: inline-block;
+  float: left;
+}
+
+.form-control:invalid {
+  background-color: #ff9a95;
+}
+
+.form-label {
+  font-size: 1.5rem;
+  display: inline-block;
+  float: left;
+  padding: 5px 0;
+  clear: left;
+  width: 250px;
+  text-align: right;
+}
+
+form {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.button,
+.button:visited {
+  border: 1px solid #000;
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.5rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #fff;
+}
+
+.link {
+  padding: 5px 20px;
+  color: black;
+  display: block;
+}
+
+.table-wrapper {
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer {
+  padding-top: 16px;
+  height: 20vh;
+  width: 100%;
+  border-top: 1px solid black;
+  position: absolute;
+  bottom: 0;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.table-header {
+  background-color: #ddd;
+}

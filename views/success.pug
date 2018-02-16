@@ -1,11 +1,9 @@
 extends layout
+
 block content
-  p Villa
-
-  if err && err.message
-    p=err.message
-    pre #{err.stack}
-
+  p Takk fyrir skráningu
+  a(href='/') Aftur á forsíðu
+  
 block foot
   if user
     p.link Innskráður notendi: #{user.name}
@@ -14,3 +12,4 @@ block foot
 
   else
     a.link(href='/login') Innskráning
+        

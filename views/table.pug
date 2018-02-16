@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  div.table-wrapper
+    table.table
+      tr.table-header 
+        th Id
+        th Dagsetning
+        th Nafn
+        th Kennitala
+        th Netfang
+        th Fjöldi
+      each val in rows
+        tr.table-row
+          td= val.id
+          td= val.date
+          td= val.name
+          td= val.idnumber
+          td= val.email
+          td= val.amount
+    a.link.download(href='/admin/download') Sækja      
+        
+block foot
+  if user
+    p.link Innskráður notendi: #{user.name}
+    a.link(href='/logout') Útskráning
+    a.link(href='/admin') Stjórnsíða
+    
+  a.link(href='/') Forsíða
