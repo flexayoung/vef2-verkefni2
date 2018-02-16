@@ -83,7 +83,6 @@ app.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
-
 function notFoundHandler(req, res, next) { // eslint-disable-line
   res.status(404).render('error', { title: '404' });
 }
@@ -97,7 +96,7 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = process.env.port || 3000;
 
 app.listen(port, hostname, () => {
   console.info(`Server running at http://${hostname}:${port}/`);

@@ -37,8 +37,7 @@ router.get('/', ensureLoggedIn, (req, res) => {
     .catch(e => console.error(e))
 })
 
-router.get('/download', (req, res) => {
-  if (!req.user) return;
+router.get('/download', ensureLoggedIn, (req, res) => {
   const fields = ['id', 'name', 'email', 'idnumber', 'amount', 'date'];
   res.set('Content-Disposition', 'attachment; filename="file.csv"');
 
